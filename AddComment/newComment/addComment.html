@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="../../img/icon.png" width="50" alt="" /> Добавить отзыв
+        </a>
+      </nav>
+      <div class="container">
+        <br /><br />
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Имя:</label>
+            <input v-model="name" class="form-control" placeholder="Имя" />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Откуда:</label>
+            <input
+              v-model="from"
+              class="form-control"
+              placeholder="Алматы қаласы"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Ссылка на фото:</label>
+            <input
+              v-model="img"
+              class="form-control"
+              placeholder="https://i.kinja-img/image/up/MImn--/c_scale,f.jpg"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Отзыв:</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              v-model="text"
+            ></textarea>
+          </div>
+
+          <button
+            v-on:click="addButton"
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+          >
+            Добавить отзыв
+          </button>
+        </form>
+        <br>
+        <H3 class="text-center">Все отзывы</H3>
+        <br>
+        <div class="row">
+        <div v-for="comment in comments" class="col-md-4">
+              <h3>{{ comment.name }}</h1>
+              <h4>{{ comment.from }}</h1>
+              <p>{{ comment.text }}</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script src="addComment.js"></script>
+  </body>
+</html>
