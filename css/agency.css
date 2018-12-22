@@ -197,7 +197,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url('../img/background.jpg');
+  /* background-image: url('../img/background.jpg'); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -769,6 +769,7 @@ ul.social-buttons li a:hover {
 }
 .aboutMeImg {
   width: 80%;
+  margin: 10px 0;
 }
 
 .item {
